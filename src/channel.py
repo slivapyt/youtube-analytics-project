@@ -9,11 +9,14 @@ youtube = build('youtube', 'v3', developerKey=api_key)
 
 class Channel:
     """Класс для ютуб-канала"""
+    # api_key: str = os.getenv('YT_API_KEY')
+    # youtube = build('youtube', 'v3', developerKey=api_key)
 
     def __init__(self, channel_id: str) -> None:
         self.channel_id = channel_id
         self.channel_inf = youtube.channels().list(
             id=self.channel_id, part='snippet,statistics').execute()
+
         self.title = self.channel_inf['items'][0]['snippet']['title']
         self.description = self.channel_inf['items'][0]['snippet']['description']
         self.customUrl = self.channel_inf['items'][0]['snippet']['customUrl']

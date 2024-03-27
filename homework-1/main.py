@@ -1,8 +1,8 @@
 from src.channel import Channel
-
+from src.video import Video
 
 if __name__ == '__main__':
-    moscowpython = Channel('UC-OVMPlMA3-YCIeg4z5z23A')
+    moscowpython = Video('UC-OVMPlMA3-YCIeg4z5z23A')
     # moscowpython.print_info()
     print(moscowpython.title)
     print(moscowpython.description)
